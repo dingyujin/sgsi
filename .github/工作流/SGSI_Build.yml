@@ -20,12 +20,12 @@ jobs:
       - name: Check Configuration
         run: |
           function required () { if ! [[ "$1" ]]; then echo "$2 variable can't be null." && exit 1; fi }
-          required "${{ steps.config.outputs.rom_url }}" "ROM_URL config"
-          required "${{ steps.config.outputs.build_type }}" "BUILD_TYPE config"
-          required "${{ steps.config.outputs.os_type }}" "OS_TYPE config"
-          required "${{ steps.config.outputs.zip_name }}" "ZIP_NAME config"
+          required "${{ steps.config.outputs.rom_url }}"https://firmware.meizu.com/Firmware/Flyme/PRO6_Plus/8.0.5.0/cn/20200709031541/8e9f480a/update.zip "ROM_URL config"
+          required "${{ steps.config.outputs.build_type }}"ab "BUILD_TYPE config"
+          required "${{ steps.config.outputs.os_type }}"flyme "OS_TYPE config"
+          required "${{ steps.config.outputs.zip_name }}"update "ZIP_NAME config"
           required "${{ steps.config.outputs.version }}" "VERSION config"
-          required "${{ steps.config.outputs.repack_name }}" "REPACK_NAME config"
+          required "${{ steps.config.outputs.repack_name }}"sgsi "REPACK_NAME config"
 
       - name: Cleanup workspace
         uses: rokibhasansagar/slimhub_actions@main
